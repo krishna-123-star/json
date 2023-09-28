@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Job Details</title>
+</head>
+<body>
+    <div id="jobDetails"></div>
+
+    <script>
+        // Create a JSON object for a job
+        var job = {
+            Jobid: 1,
+            title: "Software Developer",
+            skills: ["JavaScript", "HTML", "CSS", "Node.js"],
+            experience: 3,
+            salary: "$80,000 per year"
+        };
+
+        var jobString = JSON.stringify(job, null, 4);
+
+        var jobDetailsElement = document.getElementById("jobDetails");
+        jobDetailsElement.innerHTML = "<pre>" + jobString + "</pre>";
+    </script>
+</body>
+</html>

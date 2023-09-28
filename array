@@ -1,0 +1,17 @@
+2.var array = ['a', 1, 'b', 2, 'c', 3]
+
+var array = ['a', 1, 'b', 2, 'c', 3];
+
+var jsonObject = {};
+
+for (var i = 0; i < array.length; i += 2) {
+    var key = array[i];
+    var value = array[i + 1];
+    jsonObject[key] = value;
+}
+
+var jsonString = JSON.stringify(jsonObject);
+
+console.log(jsonString);
+
+

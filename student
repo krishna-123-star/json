@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Information</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Street No</th>
+                <th>Plot No</th>
+                <th>City</th>
+                <th>Landline</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody id="studentTable"></tbody>
+    </table>
+
+    <script>
+        var students = [
+            {
+                "roll_no": 101,
+                "name": "Ram",
+                "gender": "male",
+                "address": {
+                    "street-no": 20,
+                    "plot-no": 121,
+                    "city": "pune",
+                    "contact": {
+                        "landline": 2292099,
+                        "mobile": 8907632178
+                    }
+                }
+            },
+            {
+                "roll_no": 102,
+                "name": "Shyam",
+                "gender": "male",
+                "address": {
+                    "street-no": 12,
+                    "plot-no": 221,
+                    "city": "pune"
+                }
+            },
+            {
+                "roll_no": 103,
+                "name": "Vivek",
+                "gender": "male",
+                "address": {
+                    "street-no": 11,
+                    "plot-no": 432,
+                    "city": "pune"
+                },
+                "contact": {
+                    "landline": 2296799,
+                    "mobile": 8977032178
+                }
+            },
+            {
+                "roll_no": 104,
+                "name": "Sandhya",
+                "gender": "female",
+                "address": {
+                    "street-no": 21,
+                    "plot-no": 222,
+                    "city": "pune"
+                }
+            }
+        ];
+
+        var studentTable = document.getElementById("studentTable");
+
+        students.forEach(function(student) {
+            var row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${student.roll_no}</td>
+                <td>${student.name}</td>
+                <td>${student.gender}</td>
+                <td>${student.address["street-no"] || ''}</td>
+                <td>${student.address["plot-no"] || ''}</td>
+                <td>${student.address.city || ''}</td>
+                <td>${student.address.contact ? student.address.contact.landline || '' : ''}</td>
+                <td>${student.address.contact ? student.address.contact.mobile || '' : ''}</td>
+            `;
+            studentTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>

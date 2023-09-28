@@ -1,0 +1,19 @@
+2.var array = ['a', 1, 'b', 2, 'c', 3]
+Create JSON object from the above array.
+
+var array = ['a', 1, 'b', 2, 'c', 3];
+
+// Create an empty object
+var jsonObject = {};
+
+// Use a loop to add key-value pairs to the object
+for (var i = 0; i < array.length; i += 2) {
+    var key = array[i];
+    var value = array[i + 1];
+    jsonObject[key] = value;
+}
+
+// Convert the object to a JSON string
+var jsonString = JSON.stringify(jsonObject);
+
+console.log(jsonString);

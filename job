@@ -14,7 +14,7 @@
             salary: "$80,000 per year"
         };
 
-        var jobString = JSON.stringify(job, null, 4);
+        var jobString = JSON.stringify(job, null);
 
         var jobDetailsElement = document.getElementById("jobDetails");
         jobDetailsElement.innerHTML = "<pre>" + jobString + "</pre>";
